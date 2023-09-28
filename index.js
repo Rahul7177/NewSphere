@@ -5,15 +5,13 @@ const url = "https://newsapi.org/V2/top-headlines?country=in&category=";
 
 window.addEventListener('load',()=> fetchNews(""));
 
-let articles;
 async function fetchNews(query)
 {
     const searchBar = document.querySelector('#search-bar');
     searchBar.value = '';
     const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
     const data = await res.json();
-    articles = data.articles;
-    bindData(articles);
+    bindData(data.articles);
 }
 
 function bindData(articles)

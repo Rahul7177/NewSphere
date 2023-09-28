@@ -1,0 +1,799 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --background-color:#e6c49d;
+    --background-light-color: #d0b7a8;
+    --primary-text-color: #081521;
+}
+
+body
+{
+    height: 100%;
+    width: 100%;
+    background: url(/Assets/Images/Noise.png);
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    font-family: monospace;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#main
+{
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+nav
+{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid var(--primary-text-color);
+    box-shadow:0px 0px 5px var(--primary-text-color) ;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: var(--background-color);
+}
+
+.logo
+{
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.nav-links
+{
+    border: 2px solid var(--primary-text-color);
+    border-radius: 5px;
+    transform: translate(15%);
+    background-color: var(--primary-text-color);
+    color: var(--background-light-color);
+
+}
+
+.nav-links ul
+{
+    display: flex;
+    list-style: none;
+}
+
+.nav-links ul li 
+{
+    padding: 0.5rem;
+    padding-left:1rem ;
+    text-decoration: none;
+    /* color: var(--primary-text-color); */
+    cursor: pointer;
+    font-size: 1rem;
+    /* font-weight: 300; */
+}
+
+.menu
+{
+    display: none;
+}
+
+
+.search
+{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    width: fit-content;
+    border: 0.5px solid var(--primary-text-color);
+    border-radius: 5px;
+    background-color: var(--background-light-color);
+}
+
+.search input
+{
+    outline: none;
+    border: none;
+    height: 5vh;
+    width: 15vw;
+    padding: 10px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 1rem;
+    font-weight: 300;
+    background-color: var(--background-light-color);
+}
+
+.search button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 0px 5px 5px 0px;
+    background-color: var(--primary-text-color);
+    color: var(--background-light-color);
+    cursor: pointer;
+}
+
+.section1
+{
+    display: flex;
+    min-height: 90vh;
+    max-height: fit-content;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+
+}
+
+.card-container
+{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 25rem;
+    overflow: hidden;
+    box-shadow: 0 0 2px var(--primary-text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    position: relative;
+    background: url(/Assets/Images/Noise.png);
+    background-color: #e4caba;
+}
+
+.card-header
+{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+/* .card-header:hover .overlay
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0.7;
+} */
+
+.card-header img
+{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    z-index: 10;
+    transition: ease-in-out 0.35s;
+    border-radius: 5px 5px 0 0;
+}
+
+
+.card-header img:hover
+{
+    scale: 1.1;
+}
+
+.card-content
+{
+    height: 50%;
+    width: 100%;
+    padding: 12px;
+}
+
+
+.news-title
+{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.news-source
+{
+
+    font-size: 0.8rem;
+    margin-top: 10px;
+    font-weight: 300;
+    /* font-family: monospace; */
+}
+
+.active
+{
+
+    font-size: 1.5rem;
+    scale: 1.05;
+    font-weight: 700;
+}
+
+.news-desc
+{
+    opacity: 0;
+}
+
+.card button
+{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 10px;
+    background-color:var(--primary-text-color);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: all ease 0.2s;
+    /* margin-top: 35px; */
+}
+
+.card button:hover
+{
+   scale: 1.05;
+}
+
+  
+ 
+  @media (max-width: 1200px){
+    .nav-links
+    {
+        transform: translate(5%);
+    }
+  }
+
+  @media (max-width: 1000px){
+    .nav-links
+    {
+        transform: translate(0%);
+        
+    }
+
+    .nav-links ul li
+    {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .card
+    {
+        width: 30%;
+        max-height: 20rem;
+        min-height: fit-content;
+    }
+
+    .card-header{
+        height: 50%;
+        
+    }
+
+    .card-header img
+    {
+        height: 100%;
+    }
+
+    .card-content
+    {
+        height: 50%;
+    }
+    .logo
+    {
+        font-size: 1.1rem;
+    }
+    .search input
+    {
+        width: 20vw;
+        font-size: 0.8rem;
+    }
+
+    .search button
+    {
+        font-size: 0.8rem;
+    }
+
+    .news-title
+    {
+        font-size: 0.8rem;
+    }
+
+    .news-source
+    {
+        font-size: 0.6rem;
+    }
+  }
+
+  @media (max-width: 750px){
+    .card
+    {
+        width: 40%;
+        max-height: 20rem;
+        min-height: fit-content;
+    }
+
+    .card-header{
+        height: 50%;
+        
+    }
+
+    .card-header img
+    {
+        height: 100%;
+    }
+
+    .card-content
+    {
+        height: 50%;
+    }
+
+    nav
+    {
+        height: fit-content;
+        align-items: center;
+    }
+
+    .nav-links ul li
+    {
+        font-size: 0.6rem;
+    }
+    
+    .logo
+    {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+    .search input
+    {
+        width: 15vw;
+        font-size: 0.6rem;
+        
+    }
+
+    .search button
+    {
+        font-size: 0.7rem;
+        padding: 9px;
+    }
+
+    .news-title
+    {
+        font-size: 0.8rem;
+    }
+
+    .news-source
+    {
+        font-size: 0.6rem;
+    }
+  }
+
+  @media (max-width: 600px){
+    .card
+    {
+        width: 45%;
+        max-height: 20rem;
+        min-height: fit-content;
+    }
+
+    .card-header{
+        height: 50%;
+        
+    }
+
+    .card-header img
+    {
+        height: 100%;
+    }
+
+    .card-content
+    {
+        height: 50%;
+    }
+
+    .card button 
+    {
+        font-size: 0.8rem;
+    }
+    nav
+    {
+        height: fit-content;
+        align-items: start;
+        flex-direction: column;
+    }
+    .nav-links
+    {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .nav-links ul li
+    {
+        font-size: 0.65rem;
+        padding: 0.5rem;
+    }
+
+    .logo
+    {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+
+    .search
+    {
+        margin-top: 10px;
+    }
+
+    .search input
+    {
+        width: 15vw;
+        padding: 5px;
+        font-size: 0.5rem;
+        
+    }
+
+    .search button
+    {
+        font-size: 0.5rem;
+        padding: 10px;
+    }
+
+    .news-title
+    {
+        font-size: 0.65rem;
+    }
+
+    .news-source
+    {
+        font-size: 0.55rem;
+    }
+  }
+
+  @media (max-width: 480px){
+    
+
+    .section1
+    {
+        padding: 10px;
+    }
+    .card-container
+    {
+        padding: 0;
+        width: 100%;
+    }
+    
+    
+    .card
+    {
+        width: 45%;
+        max-height: 17rem;
+        min-height: fit-content;
+    }
+
+    .card-header{
+        height: 40%;
+        
+    }
+
+    .card-header img
+    {
+        height: 100%;
+    }
+
+    .card-content
+    {
+        height: 60%;
+    }
+
+    .card button 
+    {
+        font-size: 0.8rem;
+    }
+    nav
+    {
+        height: fit-content;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .search
+    {
+        margin-top: 10px;
+    }
+    .nav-links
+    {
+
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .nav-links ul li
+    {
+        font-size: 0.6rem;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .logo
+    {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+    .search input
+    {
+        width: 17vw;
+        padding: 5px;
+        font-size: 0.6rem;
+        
+    }
+
+    .search button
+    {
+        font-size: 0.5rem;
+        padding: 10px;
+    }
+
+    .news-title
+    {
+        font-size: 0.65rem;
+    }
+
+    .news-source
+    {
+        font-size: 0.55rem;
+    }
+  }
+
+  @media (max-width: 430px){
+    .card
+    {
+        width: 80%;
+        max-height: 20rem;
+        min-height: fit-content;
+    }
+
+    .card-header{
+        height: 60%;
+        
+    }
+
+    .card-header img
+    {
+        height: 100%;
+    }
+
+    .card-content
+    {
+        height: 40%;
+    }
+
+    .card button 
+    {
+        font-size: 0.8rem;
+    }
+    nav
+    {
+        height: fit-content;
+        align-items: start;
+        flex-direction: column;
+    }
+    .nav-links
+    {
+
+        position:initial;
+        /* right: 20px;
+        top: 10px; */
+        height: fit-content;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .nav-links ul
+    {
+        justify-content: space-evenly;
+    }
+    
+    .nav-links ul li
+    {
+        font-size: 0.7rem;
+    }
+
+    .logo
+    {
+        width: 100%;
+        font-size: 1rem;
+        margin-left: 0;
+        display: block;
+    }
+
+    .search
+    {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .search input
+    {
+        width: 80%;
+        padding: 3px;
+        font-size: 0.6rem;
+        
+    }
+
+    .search button
+    {
+        width: 20%;
+        font-size: 0.5rem;
+        padding: 10px;
+    }
+
+    .news-title
+    {
+        font-size: 0.65rem;
+    }
+
+    .news-source
+    {
+        font-size: 0.55rem;
+    }
+  }
+
+  @media (max-width: 380px){
+    .card
+    {
+        width: 85%;
+        max-height: 20rem;
+        min-height: fit-content;
+    }
+
+    .card-header{
+        height: 60%;
+        
+    }
+
+    .card-header img
+    {
+        height: 100%;
+    }
+
+    .card-content
+    {
+        height: 40%;
+    }
+
+    .card button 
+    {
+        font-size: 0.8rem;
+    }
+    nav
+    {
+        height: fit-content;
+        align-items: start;
+        flex-direction: column;
+    }
+    .nav-links
+    {
+
+        position:initial;
+        /* right: 20px;
+        top: 10px; */
+        height: fit-content;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .nav-links ul
+    {
+        justify-content: space-evenly;
+    }
+    .nav-links ul li
+    {
+        font-size: 0.6rem;
+        /* padding: 0.5rem 0.3rem; */
+    }
+
+    .logo
+    {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+
+    .search
+    {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .search input
+    {
+        width: 80%;
+        padding: 3px;
+        font-size: 0.6rem;
+        
+    }
+
+    .search button
+    {
+        width: 20%;
+        font-size: 0.5rem;
+        padding: 10px;
+    }
+
+    .news-title
+    {
+        font-size: 0.65rem;
+    }
+
+    .news-source
+    {
+        font-size: 0.55rem;
+    }
+  }
+
+  @media (max-width: 310px){
+
+    .card
+    {
+        width: 90%;
+        min-height: 40vh;
+        max-height: fit-content;
+    }
+    nav
+    {
+        height: fit-content;
+        align-items: start;
+        flex-direction: column;
+    }
+    .nav-links
+    {
+
+        position:initial;
+        /* right: 20px;
+        top: 10px; */
+        height: fit-content;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .nav-links ul
+    {
+        justify-content: space-evenly;
+    }
+    .nav-links ul li
+    {
+        font-size: 0.5rem;
+        /* padding: 0.5rem 0.3rem; */
+    }
+
+    .logo
+    {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+
+    .search
+    {
+        width: 100%;
+        margin-top: 15px;
+    }
+}

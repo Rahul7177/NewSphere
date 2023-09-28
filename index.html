@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>News App</title>
+</head>
+<body class="body">
+    <div id="main" class="main">
+        <nav>
+                <span class="logo">NewSphere</span>
+                <div class="nav-links">
+                    <ul>
+                        <!-- <li class="nav-li"><i class="ri-arrow-left-s-fill arrow"></i></li> -->
+                        <li class="nav-li" id="entertainment" onclick="onNavClick('entertainment','entertainment')">Entertainment</li>
+                        <li class="nav-li" id="sports" onclick="onNavClick('sports','sports')">Sports</li>
+                        <li class="nav-li active" id="trending" onclick="onNavClick('','trending')">Trending</li>
+                        <li class="nav-li" id="business" onclick="onNavClick('business','business')">Finance</li>
+                        <li class="nav-li" id="technology" onclick="onNavClick('technology','technology')">Technology</li>
+                        <!-- <li class="nav-li"><i class="ri-arrow-right-s-fill arrow"></i></li> -->
+                    </ul>
+                </div>
+                <span class="search">
+                        <input type="text" placeholder="Anything.." id="search-bar">
+                        <button id="search-btn">Search</button>
+
+                </span>
+                <i class="ri-menu-3-line menu"></i>
+        </nav>
+
+        <div class="section1">
+            <div class="card-container" id="card-container">
+                
+
+            </div>
+        </div>
+
+    </div>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title" class="news-title">Title</h3>
+                <h3 id="news-source" class="news-source">Source</h3>
+                <!-- <p id="news-desc" class="news-desc">Description
+                </p> -->
+                
+            </div>
+            <button>Read Article</button>
+        </div>
+    </template>
+
+    <script src="/index.js"></script>
+</body>
+</html>
